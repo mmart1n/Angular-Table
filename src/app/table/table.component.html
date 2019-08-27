@@ -1,7 +1,8 @@
 <div class="wrapper">
     <table class="my-table">
-        <app-headers *ngIf="sorting" [tableHeadersArr]="dataKeys" (sortingStrategy)="sortTable($event)" [isSortingEnable]="true"></app-headers>
-        <app-headers *ngIf="!sorting" [tableHeadersArr]="dataKeys"></app-headers>
+        <!-- <app-headers *ngIf="sorting" [tableHeadersArr]="dataKeys" (sortingStrategy)="sortTable($event)" [isSortingEnable]="true"></app-headers>
+        <app-headers *ngIf="!sorting" [tableHeadersArr]="dataKeys"></app-headers> -->
+        <app-header-row [isSortingEnable]="sorting"></app-header-row>
         <app-row [wholeData]="data"></app-row>
     </table>
 </div>

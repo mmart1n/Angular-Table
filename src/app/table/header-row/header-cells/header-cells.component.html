@@ -1,0 +1,8 @@
+<th class="header" *ngIf="isSorting" (click)="chooseFieldToSort()"> {{ headerName }} 
+    <span *ngIf="sortingInfo.field !== headerName" class="icon-sorting">i</span>
+    <span *ngIf="sortingInfo.field === headerName && sortingInfo.strategy === 'ascending'" class="icon-ascending"></span>
+    <span *ngIf="sortingInfo.field === headerName && sortingInfo.strategy === 'descending'" class="icon-descending"></span>
+</th>
+
+<th class="header" *ngIf="!isSorting"> {{ headerName }} 
+</th>

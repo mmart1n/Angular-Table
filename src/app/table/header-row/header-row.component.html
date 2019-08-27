@@ -1,0 +1,11 @@
+<thead *ngIf="isSortingEnable" class="header-row">
+    <app-header-cells *ngFor="let name of headersArr" (fieldToBeSorted)="sortTable($event)" [headerName]="name"
+        [isSorting]="isSortingEnable" [sortingInfo]="toEmit">
+    </app-header-cells>
+</thead>
+
+<thead *ngIf="!isSortingEnable" class="header-row">
+    <app-header-cells *ngFor="let name of headersArr" [headerName]="name"
+        [isSorting]="isSortingEnable">
+    </app-header-cells>
+</thead>

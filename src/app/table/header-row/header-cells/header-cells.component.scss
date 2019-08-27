@@ -1,0 +1,29 @@
+.icon-sorting {
+    float: right;
+    width: 10px;
+    visibility: hidden;
+    margin-right: 15px;
+    margin-left: -25px;
+}
+
+.icon-ascending::before {
+    float: right;
+    width: 10px;
+    content: 'a';
+    margin-right: 15px;
+    margin-left: -25px;
+}
+
+.icon-descending::before {
+    float: right;
+    width: 10px;
+    content: 'd';
+    margin-right: 15px;
+    margin-left: -25px;
+}
+
+.header:hover{
+    .icon-sorting{
+        visibility: visible;
+    }
+}
