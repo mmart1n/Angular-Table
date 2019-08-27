@@ -18,6 +18,6 @@ export class TableComponent implements OnInit {
 
 
   sortTable(event: {field: string, strategy: string}) {
-    this.service.sortingData(this.data.slice(), event.field, event.strategy);
+    this.service.sortingData(this.data, event.field, event.strategy);
   }
 }
