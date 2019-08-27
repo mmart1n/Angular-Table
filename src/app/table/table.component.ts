@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DATA } from './data/data';
+import { SortingService } from './services/sorting.service';
 
 @Component({
   selector: 'app-table',
@@ -7,33 +8,16 @@ import { DATA } from './data/data';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
+  @Input() sorting = false;
   private data = DATA.slice();
   private dataKeys: string[] = Object.keys(this.data[0]);
-  constructor() { }
+  constructor(private service: SortingService) { }
 
   ngOnInit() {
   }
 
-  sortTable(event: {field: string, strategy: string}) {
-    if (event.strategy !== '') {
-      this.data.sort((a, b) => {
-        if (typeof a[event.field] === 'string') {
-          if (event.strategy === 'ascending') {
-            return a[event.field].localeCompare(b[event.field]);
-          } else {
-            return b[event.field].localeCompare(a[event.field]);
-          }
-        } else {
-          if (event.strategy === 'ascending') {
-            return a[event.field] - b[event.field];
-          } else {
-            return b[event.field] - a[event.field];
-          }
-        }
-      });
-    } else {
-      this.data = DATA.slice();
-    }
-  }
 
+  sortTable(event: {field: string, strategy: string}) {
+    this.service.sortingData(this.data.slice(), event.field, event.strategy);
+  }
 }

@@ -6,6 +6,7 @@ import { TableComponent } from './table/table.component';
 import { RowComponent } from './table/row/row.component';
 import { CellComponent } from './table/row/cell/cell.component';
 import { HeadersComponent } from './table/headers/headers.component';
+import { SortingService } from './table/services/sorting.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { HeadersComponent } from './table/headers/headers.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [SortingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

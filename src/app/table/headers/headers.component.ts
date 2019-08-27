@@ -6,6 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./headers.component.scss']
 })
 export class HeadersComponent implements OnInit {
+  @Input() isSortingEnable = false;
   @Input() tableHeadersArr: string[];
   @Output() sortingStrategy = new EventEmitter();
   private showSortingIcon = false;
