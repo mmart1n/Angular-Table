@@ -1,0 +1,11 @@
+.cell-component {
+    width: 200px;
+    margin: 0;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    text-align: center;
+}
+
+.cell-component:last-of-type{
+    width: 96px;
+}

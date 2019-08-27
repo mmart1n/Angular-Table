@@ -1,0 +1,7 @@
+<thead class="header-row">
+    <th class="header" (mouseenter)="showIcon(header)" (mouseleave)="hideIcon()" *ngFor="let header of tableHeadersArr" (click)="sorting(header)">{{ header }}
+        <span *ngIf="showSortingIcon" class="icon-sorting">i</span>
+        <span *ngIf="toEmit.strategy === 'ascending' && toEmit.field === header" class="icon-ascending"></span>
+        <span *ngIf="toEmit.strategy === 'descending' && toEmit.field === header" class="icon-descending"></span>
+    </th>
+</thead>
