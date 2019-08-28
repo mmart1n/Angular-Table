@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DataService } from '../services/data.service';
 import { SortingService } from '../services/sorting.service';
 
 @Component({
@@ -9,17 +8,15 @@ import { SortingService } from '../services/sorting.service';
 })
 export class HeaderRowComponent implements OnInit {
   @Input() isSortingEnable;
-  private headersArr: string[];
+  @Input() headersArr: string[];
   private toEmit = {
     field: '',
     strategy: ''
   };
-  constructor(private dataService: DataService, private sortingService: SortingService) {
+  constructor(private sortingService: SortingService) {
   }
 
-  ngOnInit() {
-    this.headersArr = this.dataService.getDataKeys();
-  }
+  ngOnInit() { }
 
   sortTable(fieldName) {
     if (fieldName !== this.toEmit.field) {
@@ -34,7 +31,7 @@ export class HeaderRowComponent implements OnInit {
       this.toEmit.strategy = '';
       this.toEmit.field = '';
     }
-    this.sortingService.sortingData(this.dataService.readData(), this.toEmit.field, this.toEmit.strategy);
+    this.sortingService.sortingData(this.toEmit.field, this.toEmit.strategy);
   }
 
 }

@@ -5,9 +5,10 @@ import { TableComponent } from './table/table.component';
 import { RowComponent } from './table/row/row.component';
 import { CellComponent } from './table/row/cell/cell.component';
 import { SortingService } from './table/services/sorting.service';
-import { DataService } from './table/services/data.service';
 import { HeaderRowComponent } from './table/header-row/header-row.component';
 import { HeaderCellsComponent } from './table/header-row/header-cells/header-cells.component';
+import { SortingPipe } from './table/sorting.pipe';
+import { PagingComponent } from './table/paging/paging.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +18,13 @@ import { HeaderCellsComponent } from './table/header-row/header-cells/header-cel
     RowComponent,
     HeaderRowComponent,
     HeaderCellsComponent,
+    SortingPipe,
+    PagingComponent,
   ],
   imports: [
     BrowserModule
   ],
-  providers: [DataService, SortingService],
+  providers: [SortingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

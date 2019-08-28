@@ -1,5 +1,5 @@
 <tbody class="table-body">
-    <tr class="row" *ngFor="let entry of this.wholeData">
+    <tr class="row" *ngFor="let entry of this.wholeData.slice() | sorting:toEmit.field:toEmit.strategy ">
         <app-cell [record]="entry"></app-cell>
     </tr>
 </tbody>
