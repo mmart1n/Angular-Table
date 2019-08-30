@@ -1,6 +1,7 @@
 <div class="wrapper">
     <table class="my-table">
         <app-header-row [isSortingEnable]="sorting" [headersArr]="headerKeys"></app-header-row>
-        <app-row [wholeData]="data"></app-row>
+        <app-row [wholeData]="data" [paging]='paging' [recordsPerPage]='perPage'></app-row>
     </table>
+    <app-paging *ngIf='paging'></app-paging>
 </div>

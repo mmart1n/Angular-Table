@@ -9,6 +9,8 @@ import { HeaderRowComponent } from './table/header-row/header-row.component';
 import { HeaderCellsComponent } from './table/header-row/header-cells/header-cells.component';
 import { SortingPipe } from './table/sorting.pipe';
 import { PagingComponent } from './table/paging/paging.component';
+import { PagingService } from './table/services/paging.service';
+import { PagingPipe } from './table/paging.pipe';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,13 @@ import { PagingComponent } from './table/paging/paging.component';
     HeaderRowComponent,
     HeaderCellsComponent,
     SortingPipe,
+    PagingPipe,
     PagingComponent,
   ],
   imports: [
     BrowserModule
   ],
-  providers: [SortingService],
+  providers: [SortingService, PagingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

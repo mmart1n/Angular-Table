@@ -1,1 +1,6 @@
-<p>paging works!</p>
+<div class="paging">
+    <div class="buttons-position">
+        <button [disabled]="currentPage<=1" class="nav-buttons" (click)="goToPrevPage()">Prev</button>
+        <button [disabled]="currentPage>=totalPages" class="nav-buttons" (click)="goToNextPage()">Next</button>
+    </div>
+</div>
