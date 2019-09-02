@@ -1,4 +1,10 @@
 <div class="paging">
+    <div class="items-per-page-position">
+        <span>Items per page: </span>
+        <select type="number" class="selector" [(ngModel)]="itemsPerPage" (ngModelChange)="toNumber()">
+            <option *ngFor="let items of itemsPerPageOptions" [ngValue]="items">{{items}}</option>
+        </select>
+    </div>
     <div class="buttons-position">
         <button [disabled]="currentPage<=1" class="nav-buttons" (click)="goToPrevPage()">Prev</button>
         <button [disabled]="currentPage>=totalPages" class="nav-buttons" (click)="goToNextPage()">Next</button>

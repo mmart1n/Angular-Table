@@ -11,7 +11,8 @@ import { PagingService } from '../services/paging.service';
 export class RowComponent implements OnInit {
   @Input() wholeData: any[];
   @Input() paging = false;
-  @Input() recordsPerPage: number;
+  private recordsPerPageSubscription: Subscription;
+  private recordsPerPage: number;
   private currentPage: number;
   private currentPageSubscription: Subscription;
   private sortingSubscription: Subscription;
@@ -29,6 +30,9 @@ export class RowComponent implements OnInit {
     });
     this.currentPageSubscription = this.pagingService.getCurrentPage.subscribe((currPage: number) => {
       this.currentPage = currPage;
+    });
+    this.recordsPerPageSubscription = this.pagingService.getItemsPerPage.subscribe((items: number) => {
+      this.recordsPerPage = items;
     });
   }
 

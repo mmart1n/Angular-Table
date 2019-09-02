@@ -8,6 +8,12 @@
     border-bottom: 1px solid black;
 }
 
+.items-per-page-position {
+    float: left;
+    line-height: 50px;
+    margin-left: 20px;
+}
+
 .buttons-position{ 
     float: right;
     line-height: 50px;
@@ -18,4 +24,8 @@
     width: 60px;
     height: 35px;
     margin-left: 5px;
+}
+
+.selector {
+    height: 35px;
 }

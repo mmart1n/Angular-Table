@@ -1,8 +1,11 @@
 import { Subject } from 'rxjs';
-import { Injectable } from '@angular/core';
 
 export class PagingService {
+    getItemsPerPage = new Subject();
     getCurrentPage = new Subject();
+    getTotalPages = new Subject();
+    // tslint:disable-next-line:variable-name
+    private _dataLength: number;
     // tslint:disable-next-line:variable-name
     private _currentPage: number;
     // tslint:disable-next-line:variable-name
@@ -25,18 +28,29 @@ export class PagingService {
 
     set itemsPerPage(items: number) {
         this._itemsPerPage = items;
+        this.totalPages = 5;
+        this.getItemsPerPage.next(this._itemsPerPage);
     }
 
     get itemsPerPage() {
         return this._itemsPerPage;
     }
 
-    set totalPages(totalPages) {
-        this._totalPages = totalPages;
+    set totalPages(pages) {
+        this._totalPages = Math.ceil(this._dataLength / this.itemsPerPage);
+        this.getTotalPages.next(this._totalPages);
     }
 
     get totalPages(): number {
         return this._totalPages;
+    }
+
+    set dataLength(length) {
+        this._dataLength = length;
+    }
+
+    get dataLength() {
+        return this._dataLength;
     }
 
 }

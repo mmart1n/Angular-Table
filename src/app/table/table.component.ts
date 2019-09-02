@@ -10,17 +10,16 @@ import { PagingService } from './services/paging.service';
 export class TableComponent implements OnInit {
   @Input() sorting = false;
   @Input() paging = false;
-  @Input() perPage = 10;
-  private totalPages;
+  @Input() perPage = 5;
   private data;
   private headerKeys;
   constructor(private pagingService: PagingService) { }
 
   ngOnInit() {
     this.data = DATA;
+    this.pagingService.dataLength = this.data.length;
     this.headerKeys = Object.keys(this.data[0]);
-    this.totalPages = Math.ceil(this.data.length / this.perPage);
-    this.pagingService.totalPages = this.totalPages;
+    this.pagingService.totalPages = this.data.length;
     if (this.paging) {
       this.pagingService.itemsPerPage = this.perPage;
     } else {

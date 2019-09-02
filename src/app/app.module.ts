@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { RowComponent } from './table/row/row.component';
@@ -25,7 +26,8 @@ import { PagingPipe } from './table/paging.pipe';
     PagingComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [SortingService, PagingService],
   bootstrap: [AppComponent]
