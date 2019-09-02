@@ -5,12 +5,10 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { RowComponent } from './table/row/row.component';
 import { CellComponent } from './table/row/cell/cell.component';
-import { SortingService } from './table/services/sorting.service';
 import { HeaderRowComponent } from './table/header-row/header-row.component';
 import { HeaderCellsComponent } from './table/header-row/header-cells/header-cells.component';
 import { SortingPipe } from './table/sorting.pipe';
 import { PagingComponent } from './table/paging/paging.component';
-import { PagingService } from './table/services/paging.service';
 import { PagingPipe } from './table/paging.pipe';
 
 @NgModule({
@@ -29,7 +27,7 @@ import { PagingPipe } from './table/paging.pipe';
     BrowserModule,
     FormsModule
   ],
-  providers: [SortingService, PagingService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
