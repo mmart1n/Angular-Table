@@ -7,7 +7,7 @@ export class PagingService {
     // tslint:disable-next-line:variable-name
     private _dataLength: number;
     // tslint:disable-next-line:variable-name
-    private _currentPage: number;
+    private _currentPage = 1;
     // tslint:disable-next-line:variable-name
     private _itemsPerPage: number;
     // tslint:disable-next-line:variable-name
@@ -39,6 +39,9 @@ export class PagingService {
     set totalPages(pages) {
         this._totalPages = Math.ceil(this._dataLength / this.itemsPerPage);
         this.getTotalPages.next(this._totalPages);
+        if (this.currentPage > this._totalPages) {
+            this.currentPage = this._totalPages;
+        }
     }
 
     get totalPages(): number {
