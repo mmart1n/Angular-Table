@@ -10,6 +10,9 @@ import { HeaderCellsComponent } from './table/header-row/header-cells/header-cel
 import { SortingPipe } from './table/sorting.pipe';
 import { PagingComponent } from './table/paging/paging.component';
 import { PagingPipe } from './table/paging.pipe';
+import { FilterRowComponent } from './table/filter-row/filter-row.component';
+import { FilteringPipe } from './table/filtering.pipe';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,10 +25,13 @@ import { PagingPipe } from './table/paging.pipe';
     SortingPipe,
     PagingPipe,
     PagingComponent,
+    FilterRowComponent,
+    FilteringPipe
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

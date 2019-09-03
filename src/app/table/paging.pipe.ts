@@ -1,7 +1,7 @@
 import { PipeTransform, Pipe } from '@angular/core';
 
 @Pipe({
-    name: 'paging',
+    name: 'paging'
 })
 export class PagingPipe implements PipeTransform {
     transform(value: any, currentPage: number, itemsPerPage: number) {

@@ -1,0 +1,5 @@
+<tr class="row">
+    <td *ngFor="let field of headersArr" class="cell-component">
+        <input type="text" class="input1" [(ngModel)]="filterInfo[field]" (ngModelChange)="change()" placeholder="Search for {{ field }}...">
+    </td>
+</tr>

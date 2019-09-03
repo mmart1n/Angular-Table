@@ -1,16 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'sorting',
-  pure: false
+  name: 'sorting'
 })
 export class SortingPipe implements PipeTransform {
 
   transform(data: any, field, strategy): any {
     if (data.length === 0 || strategy === '') {
-      return data;
     } else {
-      return data.sort((a, b) => {
+      data.sort((a, b) => {
         if (typeof a[field] === 'string') {
           if (strategy === 'ascending') {
             return a[field].localeCompare(b[field]);
@@ -26,6 +24,7 @@ export class SortingPipe implements PipeTransform {
         }
       });
     }
+    return data;
   }
 
 }
