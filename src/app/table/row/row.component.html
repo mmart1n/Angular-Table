@@ -1,4 +1,6 @@
-<tr class="row"
-    *ngFor="let entry of this.wholeData.slice() | sorting:toEmit.field:toEmit.strategy | paging:currentPage:recordsPerPage ">
-    <app-cell [record]="entry"></app-cell>
-</tr>
+<tbody>
+    <tr class="row"
+        *ngFor="let entry of this.wholeData.slice() | filtering:filteringInfo | sorting:toEmit.field:toEmit.strategy | paging:currentPage:recordsPerPage ">
+        <app-cell [record]="entry"></app-cell>
+    </tr>
+</tbody>
